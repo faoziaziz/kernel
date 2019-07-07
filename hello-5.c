@@ -26,16 +26,29 @@ static int arr_argc = 0;
     for exposing parameters in sysfs (if non-zero) at later stage.
 */
 
+module_param(myshort, short, S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP);
+MODULE_PARM_DESC(myshort, "A short integer");
+module_param(myint, int, S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
+MODULE_PARM_DESC(myint, "An integer");
+module_param(mylong, long, S_IRUSR);
+MODULE_PARM_DESC(mylong, "A long integer");
+module_param(mystring, charp, 0000);
+MODULE_PARM_DESC(mystring, "A character string");
+module_param_array(myintArray, int, &arr_argc, 0000);
+MODULE_PARM_DESC(myintArray, "An array of integers");
+/* 
 module_param(myshort, short, S_IRUSR|S_IWUSR|S_IRGRP|S_IWGRP);
 MODULE_PARM_DESC(myshort, "A short integer");
 module_param(myint, int, S_IRUSR|S_IWUSR|S_IRGRP|S_IROTH);
 MODULE_PARM_DESC(myint, "Sebuah integer");
 module_param(mylong, long, S_IRUSR);
-MODULE_PARAM_DESC(mylong, "A long integer");
+MODULE_PARAM_DESC(mylong,  "A long integer");
 module_param(mystring, charp, 0000);
 MUDULE_PARAM_DESC(mystring, "A character string");
 module_param_array(myintArray, int, &arr_argc, 0000);
 MODULE_PARAM_DESC(myintArray, "An array of integer.")
+
+*/
 
 static int __init hello_5_init(void){
     int i;
