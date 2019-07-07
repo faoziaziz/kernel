@@ -1,3 +1,7 @@
+/*
+    Author : Aziz Amerul Faozi
+*/
+
 #include<linux/module.h>
 #include<linux/moduleparam.h>
 #include<linux/kernel.h>
@@ -30,7 +34,8 @@ module_param(mylong, long, S_IRUSR);
 MODULE_PARAM_DESC(mylong, "A long integer");
 module_param(mystring, charp, 0000);
 MUDULE_PARAM_DESC(mystring, "A character string");
-
+module_param_array(myintArray, int, &arr_argc, 0000);
+MODULE_PARAM_DESC(myintArray, "An array of integer.")
 
 static int __init hello_5_init(void){
     int i;
