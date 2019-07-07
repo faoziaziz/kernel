@@ -4,4 +4,8 @@ if you on first time to build kernel maybe you must first install libelf-dev, li
 
 ```sh
 sudo apt install libelf-dev;
-```# kernel
+```
+
+# Some Bugs not find
+
+
