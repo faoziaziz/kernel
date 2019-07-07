@@ -5,7 +5,7 @@
 #include<linux/stat.h>
 
 MODULE_LICENSE("GPL");
-MODULE_AUTROR("Aziz Amerul Faozi");
+MODULE_AUTHOR("Aziz Amerul Faozi");
 
 static short int myshort =1;
 static int myint = 420;
@@ -45,7 +45,7 @@ static int __init hello_5_init(void){
     return 0;
 }
 
-static void __exit hello_5_exit(){
+static void __exit hello_5_exit(void){
     printk(KERN_INFO "Goodbye, world 5\n.");
 }
 
